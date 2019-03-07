@@ -18,7 +18,7 @@ class HomeScreen extends Component {
         <View style={{flex:1}}>
             <Header>
                 <Left>
-                    <Icon name="menu" onPress={() => this.props.navigation.openDrawer()}/>
+                    <Icon style={{paddingLeft: 5}}name="menu" onPress={() => this.props.navigation.openDrawer()}/>
                 </Left>
             </Header>
             <View style={styles.container}>

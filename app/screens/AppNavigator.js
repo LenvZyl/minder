@@ -4,6 +4,7 @@ import { createDrawerNavigator, DrawerItems, StackNavigator, createStackNavigato
 import HomeScreen from './HomeScreen'
 import LoginScreen from './LoginScreen'
 import SettingsScreen from './SettingsScreen'
+import ProfileScreen from './ProfileScreen'
 
 const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
@@ -25,21 +26,20 @@ const CustomDrawerComponent = (props) => (
     <ScrollView>
       <DrawerItems {...props}/>
     </ScrollView>
-  </SafeAreaView>
-)
+    <View>
+      <Button title="Log out" onPress={() => console.log("Pressed")}>
 
-const LogoutDrawerComponent = (props) => (
-  <View style={{flex:1}}>
-    <SafeAreaView forceInset={{ bottom: 'always', horizontal: 'never' }}>
-        <DrawerItems {...props} />
-        <Button title="Logout" onPress={() => console.log()}/>
-    </SafeAreaView>
-  </View>
+      </Button>
+
+    </View>
+  </SafeAreaView>
 )
 
 const AppNavigator = createDrawerNavigator ({
   Home: HomeScreen,
-  Setting: SettingsScreen
+  Setting: SettingsScreen,
+  Profile: ProfileScreen
+  
 },{ 
   contentComponent: CustomDrawerComponent,
   contentOptions: {
